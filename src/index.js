@@ -23,7 +23,7 @@ function gzipCompressFile(file, options, minSize) {
     });
 }
 
-export default function gzip(options) {
+export default function zopfli(options) {
     options = options || {};
 
     const gzipOptions = options.options;
@@ -31,7 +31,7 @@ export default function gzip(options) {
     const minSize = options.minSize || 0;
 
     return {
-        name: 'gzip',
+        name: 'zopfli',
 
         onwrite: function(buildOpts, bundle) {
 
