@@ -1,5 +1,5 @@
 {
-  "name": "rollup-plugin-gzip",
+  "name": "rollup-plugin-zopfli",
   "version": "1.0.0",
   "description": "Compress your Rollup bundle with Gzip",
   "keywords": [
@@ -18,7 +18,10 @@
     "type": "git",
     "url": "git+ssh://git@github.com/kryops/rollup-plugin-gzip.git"
   },
-  "author": "Michael Strobel <michael@kryops.de>",
+  "authors": [
+    "Michael Strobel <michael@kryops.de>",
+    "Keith Cirkel (https://www.keithcirkel.co.uk)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kryops/rollup-plugin-gzip/issues"
