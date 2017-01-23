@@ -28,5 +28,8 @@
     "ava": "^0.17.0",
     "rimraf": "^2.5.4",
     "rollup": "^0.41.4"
+  },
+  "dependencies": {
+    "node-zopfli": "^2.0.2"
   }
 }

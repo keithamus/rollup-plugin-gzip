@@ -1,4 +1,4 @@
-import zlib from 'zlib';
+import zopfli from 'node-zopfli';
 import fs from 'fs';
 
 function gzipCompressFile(file, options, minSize) {
@@ -15,7 +15,7 @@ function gzipCompressFile(file, options, minSize) {
             }
             else {
                 fs.createReadStream(file)
-                    .pipe(zlib.createGzip(options))
+                    .pipe(zopfli.createGzip(options))
                     .pipe(fs.createWriteStream(file + '.gz'))
                     .on('close', () => resolve());
             }
