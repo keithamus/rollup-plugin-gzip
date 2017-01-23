@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-zopfli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Compress your Rollup bundle with Gzip",
   "keywords": [
     "rollup",
