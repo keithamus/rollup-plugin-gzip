@@ -1,12 +1,14 @@
-# rollup-plugin-gzip
+# rollup-plugin-zopfli
 
 Creates a compressed `.gz` artifact for your Rollup bundle.
+
+All credit goes to [@kryops](https://github.com/kryops) with https://github.com/kryops/rollup-plugin-gzip. This just changes `zlib` to `zopfli` and adds the additional dependency.
 
 
 ## Installation
 
 ```
-npm install --save-dev rollup-plugin-gzip
+npm install --save-dev rollup-plugin-zopfli
 ```
 
 
@@ -14,12 +16,12 @@ npm install --save-dev rollup-plugin-gzip
 
 ```js
 import {rollup} from "rollup";
-import gzip from "rollup-plugin-gzip";
+import zopfli from "rollup-plugin-zopfli";
 
 rollup({
     entry: 'src/index.js',
     plugins: [
-        gzip()
+        zopfli()
     ]
 }).then(/* ... */)
 ```
@@ -27,9 +29,9 @@ rollup({
 ### Configuration
 
 ```js
-gzip({
+zopfli({
     options: {
-        level: 9
+        numiterations: 15
         // ...
     },
     additional: [
@@ -39,15 +41,15 @@ gzip({
 })
 ```
 
-**options**: Gzip compression options
+**options**: Zopfli compression options
 
-The options available are the [standard options for the zlib module](https://nodejs.org/api/zlib.html#zlib_class_options).
+The options available are the [standard options for the zopfli module](https://github.com/pierreinglebert/node-zopfli#options).
 
 **additional**: Compress additional files
 
 This option allows you to compress additional files that were created by other Rollup plugins.
 
-As the `onwrite` callback for all plugins is executed in the same order they are listed in the `plugins` array, this might only work if the gzip plugin is positioned after all other plugins that create additional files.
+As the `onwrite` callback for all plugins is executed in the same order they are listed in the `plugins` array, this might only work if the zopfli plugin is positioned after all other plugins that create additional files.
 
 **minSize**: Minimum size for compression
 
